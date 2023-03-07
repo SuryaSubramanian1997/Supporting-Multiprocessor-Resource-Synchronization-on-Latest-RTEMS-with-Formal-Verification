@@ -7,12 +7,12 @@ The rest of the document is organized as follows:
 
 ## Patching RTEMS with new protocols
 
-For this thesis, RTEMS 5.1 is used and the original source code can be found at https://ftp.rtems.org/pub/rtems/releases/5/5.1/sources/rtems-5.1.tar.xz.
+-For this thesis, RTEMS 5.1 is used and the original source code can be found at https://ftp.rtems.org/pub/rtems/releases/5/5.1/sources/rtems-5.1.tar.xz.
 
-After installing the toolchain, the patch can be applied to the rtems kernel
+-After installing the toolchain, the patch can be applied to the rtems kernel
 
 <br />
-Before applying the patch, please make sure that you have downloaded the correct version or RTEMS
+Before applying the patch, please make sure that you have downloaded the correct version of RTEMS
 
         patch -p1 < RTEMS_file.patch
 
@@ -20,26 +20,26 @@ Before applying the patch, please make sure that you have downloaded the correct
 
 ## Frama-C installation
 
-For formal verification we have used Frama-C 25.0 version.
+-For formal verification we have used Frama-C 25.0 version.
 
-It can be downloaded from https://frama-c.com/fc-versions/manganese.html
+-It can be downloaded from https://frama-c.com/fc-versions/manganese.html
 
-Please follow the instructions provided there for installation.
+-Please follow the instructions provided there for installation.
 
 ## Formal verification of RTEMS source code
 
-As of now support for only PowerPC architecture is present from Frama-C.
+-As of now support for only PowerPC architecture is present from Frama-C.
 
-So, please use any board support package that uses PowerPC architecture to perform formal verification.
+-So, please use any board support package that uses PowerPC architecture to perform formal verification.
 
-We have used qoriq_e6500_32 board support package.
+-We have used qoriq_e6500_32 board support package.
 
-Please add the ACSL contracts in the /cpukit directory inside rtems kernel.
+-Please add the ACSL contracts in the /cpukit directory inside rtems kernel.
 
 
    
 
-The following command should be invoked within the /cpukit drectory.
+-The following command should be invoked within the /cpukit drectory.
 ```
 frama-c-gui       -cpp-command '${home}/RTEMS/build/bin/powerpc-rtems5-gcc -C -E \
       -I./include -I./score/cpu/powerpc/include/ \
