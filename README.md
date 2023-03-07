@@ -38,14 +38,13 @@ Please add the ACSL contracts in the /cpukit directory inside rtems kernel.
 
 The following command should be invoked within the /cpukit drectory.
 
-<br />
 frama-c-gui       -cpp-command '${home}/RTEMS/build/bin/powerpc-rtems5-gcc -C -E \
       -I./include -I./score/cpu/powerpc/include/ \
       -I../../rtems-build/powerpc-rtems5/c/qoriq_e6500_32/include/ \
       -I${home}/RTEMS/build/lib/gcc/powerpc-rtems5/7.5.0/include \
       -I${home}/RTEMS/build/powerpc-rtems5/include \
       -nostdinc -include hdga_contracts.h' -machdep ppc_32 -cpp-frama-c-compliant -c11       include/rtems/score/hdgaimpl.h
-<br />      
+   
       
       
       
